@@ -24,12 +24,11 @@ Tracy profiler
 %setup -q -n tracy-%{version}
 
 %build
-cd ./profiler/build/unix
-%make_build release
+%make_build -C profiler/build/unix release
 
 %install
 mkdir -p %{buildroot}%{_bindir}
-cp ./profiler/build/unix/Tracy-release %{buildroot}%{_bindir}/Tracy
+cp ./profiler/build/unix/Tracy-release %{buildroot}%{_bindir}/tracy
 
 %clean
 rm -rf %{buildroot}
@@ -38,7 +37,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc AUTHORS NEWS README.md
 %license LICENSE
-%{_bindir}/Tracy
+%{_bindir}/tracy
 
 %changelog
 * Fri Aug 28 2020 Evan Klitzke <evan@eklitzke.org> - 0.7.1-1
