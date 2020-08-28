@@ -1,0 +1,12 @@
+diff --git a/profiler/build/unix/release.mk b/profiler/build/unix/release.mk
+index b59abd5c..4bc511cf 100644
+--- a/profiler/build/unix/release.mk
++++ b/profiler/build/unix/release.mk
+@@ -1,7 +1,5 @@
+ ARCH := $(shell uname -m)
+ 
+-CFLAGS := -O3 -s -march=native
+-DEFINES := -DNDEBUG
+ BUILD := release
+ 
+ include build.mk
